@@ -16,25 +16,14 @@ RESET = "\033[0m"
 def banner():
     print(f"{RED}{BOLD}")
     print("╔══════════════════════════════════════════════════════════╗")
-    print("║           DENIAL OF SERVICE ATTACK SIMULATION             ║")
-    print("║              Attack Type: Connection Exhaustion            ║")
+    print("║           DENIAL OF SERVICE ATTACK                       ║")
+    print("║                                                          ║")
     print("╚══════════════════════════════════════════════════════════╝")
     print(RESET)
 
 
-def explain():
-    print(f"{YELLOW}[i] How this attack works:{RESET}")
-    print("    The server calls accept() only ONCE, before its main loop.")
-    print("    That means it can only ever serve a single client for its")
-    print("    entire lifetime. If an attacker grabs that one connection")
-    print("    slot and never releases it, no legitimate client can ever")
-    print("    be served again.")
-    print()
-
-
 def attack():
     banner()
-    explain()
 
     print(f"{CYAN}[ATTACKER] Target : {HOST}:{PORT}{RESET}")
     print(f"{CYAN}[ATTACKER] Establishing connection...{RESET}")
